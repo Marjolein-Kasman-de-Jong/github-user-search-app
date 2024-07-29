@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-async function getData() {
+async function getData(userToFind) {
     try {
-        let response = await axios.get('https://api.github.com/users/octocat');
+        let response = await axios.get(`https://api.github.com/users/${userToFind}`);
         response = response.data;
         
         const data = {

@@ -7,14 +7,18 @@ import getData from './helpers/getData';
 import './App.css';
 
 function App() {
+  const [userToFind, setUserToFind] = useState('')
   const [data, setData] = useState({})
-  console.log(data)
+
+  const handleInputChange = (e) => {
+    setUserToFind(e.target.value)
+  }
 
   const handleClick = async (e) => {
     e.preventDefault();
 
     try {
-      const fetchedData = await getData();
+      const fetchedData = await getData(userToFind);
       setData(fetchedData);
     } catch (error) {
       console.error('Failed to fetch data:', error);
@@ -33,7 +37,7 @@ function App() {
       </header>
       <main>
         <form className='search-bar'>
-          <input type='text' />
+          <input type='text' value={userToFind} onChange={handleInputChange} />
           <button className='search-button' onClick={(e) => handleClick(e)}>
             Search
           </button>
