@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* Colors */
+
+:root {
+    --page-bg: #F6F8FF;
+    --content-bg: #FEFEFE;
+    --stats-bg: #F6F8FF;
+    --page-header: #222731;
+    --card-header: #2B3442;
+    --text-light: #697C9A;
+    --text-medium: #4B6A9B;
+    --text-dark: #2B3442;
+    --accent: #0079FF;
+    --accent-hover: #60ABFF;
+    --error: #F74646;     
+}
+
+[data-theme='dark'] {
+    --page-bg: #141D2F;
+    --content-bg: #1E2A47;
+    --stats-bg: #141D2F;
+    --page-header: #FFF;
+    --card-header: #FFF;
+    --text-light: #FFF;
+    --text-medium: #FFF;
+    --text-dark: #FFF;
+}
+
+/* Background */
+
+.page-wrapper {
+    background-color: var(--page-bg);
+}

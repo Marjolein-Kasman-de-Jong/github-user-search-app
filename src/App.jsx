@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useLocalStorage from 'use-local-storage';
 
 // Helpers
 import getData from './helpers/getData';
@@ -7,11 +8,17 @@ import getData from './helpers/getData';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
   const [userToFind, setUserToFind] = useState('')
   const [data, setData] = useState({})
 
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme); 
+  }
+
   const handleInputChange = (e) => {
-    setUserToFind(e.target.value)
+    setUserToFind(e.target.value);
   }
 
   const handleClick = async (e) => {
@@ -26,12 +33,12 @@ function App() {
   }
 
   return (
-    <div className='page-wrapper'>
+    <div className='page-wrapper' data-theme={theme}>
       <header className='page-header'>
         <h1 className='page-title'>
           devfinder
         </h1>
-        <button className='toggle-button'>
+        <button className='theme-button' onClick={switchTheme}>
           theme
         </button>
       </header>
@@ -153,4 +160,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
