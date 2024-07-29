@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* CSS reset */
 
@@ -25,7 +25,7 @@ button {
     --text-dark: #2B3442;
     --accent: #0079FF;
     --accent-hover: #60ABFF;
-    --error: #F74646;     
+    --error: #F74646;
 }
 
 [data-theme='dark'] {
@@ -43,4 +43,71 @@ button {
 
 .page-wrapper {
     background-color: var(--page-bg);
+    transition: all .5s;
+}
+
+/* Typography */
+
+html {
+    font-family: 'Space Mono', sans-serif;
+    font-style: normal;
+}
+
+/* --Headings */
+
+[class^="heading"] {
+    line-height: normal;
+    transition: all .5s;
+}
+
+.heading-1 {
+    /* ----Page title */
+    color: var(--page-header);
+    font-size: 1.625rem;
+    font-weight: 700;
+}
+
+.heading-2 {
+    /* ----Card title */
+    color: var(--card-header);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 600px) {
+    .heading-2 {
+        font-size: 1.625rem;
+    }
+}
+
+.heading-3 {
+    /* ----Stat titles */
+    color: var(--text-medium);
+    text-align: center;
+    font-size: 0.6875rem;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 600px) {
+    .heading-3 {
+        text-align: left;
+        font-size: 0.8125rem;
+    }
+}
+
+/* --Paragraphs */
+
+.paragraph-1 {
+    /* ----Input placeholder */
+    color: var(--text-medium);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.5625rem;
+    transition: all .5s;
+}
+
+@media screen and (min-width: 600px) {
+    .paragraph-1 {
+        font-size: 1.125rem;
+    }
 }

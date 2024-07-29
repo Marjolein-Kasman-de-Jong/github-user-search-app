@@ -35,16 +35,16 @@ function App() {
   return (
     <div className='page-wrapper' data-theme={theme}>
       <header className='page-header'>
-        <h1 className='page-title'>
+        <h1 className='page-title heading-1'>
           devfinder
         </h1>
         <button className='theme-button' onClick={switchTheme}>
-          theme
+          {theme}
         </button>
       </header>
       <main>
         <form className='search-bar'>
-          <input type='text' value={userToFind} onChange={handleInputChange} />
+          <input className='paragraph-1' type='text' value={userToFind} onChange={handleInputChange} placeholder='Search GitHub username...'/>
           <button className='search-button' onClick={(e) => handleClick(e)}>
             Search
           </button>
@@ -56,7 +56,7 @@ function App() {
             </div>
             <div>
               <hgroup>
-                <h2 className='username'>
+                <h2 className='username heading-2'>
                   {data?.username}
                 </h2>
                 <p className='handle'>
@@ -75,25 +75,25 @@ function App() {
           </p>
           <div className='stats-container'>
             <div className='stat'>
-              <p className='stat-name'>
+              <h3 className='stat-title heading-3'>
                 Repos
-              </p>
+              </h3>
               <p className='stat-number'>
                 {data?.repos}
               </p>
             </div>
             <div className='stat'>
-              <p className='stat-name'>
+              <h3 className='stat-title heading-3'>
                 Followers
-              </p>
+              </h3>
               <p className='stat-number'>
                 {data?.followers}
               </p>
             </div>
             <div className='stat'>
-              <p className='stat-name'>
+              <h3 className='stat-title heading-3'>
                 Following
-              </p>
+              </h3>
               <p className='stat-number'>
                 {data?.following}
               </p>
