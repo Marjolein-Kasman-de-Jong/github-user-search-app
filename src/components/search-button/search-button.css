@@ -1,0 +1,22 @@
+.search-button {
+    width: 84px;
+    height: 46px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--accent);
+    transition: all .5s;
+}
+
+@media screen and (min-width: 768px) {
+    .search-button {
+        width: 106px;
+        height: 50px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .search-button:hover {
+        cursor: pointer;
+        background-color: var(--accent-hover);
+    }
+}

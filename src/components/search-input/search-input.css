@@ -1,0 +1,26 @@
+.search-input {
+    margin: 0 7px 0 9px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+    transition: all .5s;
+}
+
+@media screen and (min-width: 768px) {
+    .search-input {
+        margin: unset;
+    }
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-input::placeholder {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

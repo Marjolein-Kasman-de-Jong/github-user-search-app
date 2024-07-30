@@ -4,8 +4,11 @@
     gap: 16px;
     border: none;
     background-color: transparent;
+    transition: all .5s;
 }
 
-.theme-button:hover {
-    cursor: pointer;
+@media screen and (min-width: 1440px) {
+    .theme-button:hover {
+        cursor: pointer;
+    }
 }

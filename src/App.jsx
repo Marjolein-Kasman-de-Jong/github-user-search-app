@@ -4,6 +4,7 @@ import useLocalStorage from 'use-local-storage';
 // Components
 import PageTitle from './components/page-title/PageTitle';
 import ThemeButton from './components/theme-button/ThemeButton';
+import SearchBar from './components/search-bar/SearchBar';
 
 // Helpers
 import getData from './helpers/getData';
@@ -12,9 +13,10 @@ import getData from './helpers/getData';
 import './App.css';
 
 function App() {
-  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
-  const [userToFind, setUserToFind] = useState('')
-  const [data, setData] = useState({})
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light');
+  const [userToFind, setUserToFind] = useState('');
+  const [data, setData] = useState({});
+  const [errorMessage, toggleErrorMessage] = useState(false);
 
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -30,7 +32,9 @@ function App() {
 
     try {
       const fetchedData = await getData(userToFind);
+      fetchedData === undefined ? toggleErrorMessage(true) : toggleErrorMessage(false);
       setData(fetchedData);
+      setUserToFind('');
     } catch (error) {
       console.error('Failed to fetch data:', error);
     }
@@ -41,15 +45,19 @@ function App() {
       <div className='content-wrapper'>
         <header className='page-header'>
           <PageTitle />
-          <ThemeButton theme={theme} onClick={switchTheme} />
+          <ThemeButton 
+            theme={theme} 
+            onClick={switchTheme} 
+          />
         </header>
         <main>
-          <form className='search-bar'>
-            <input className='paragraph-1' type='text' value={userToFind} onChange={handleInputChange} placeholder='Search GitHub username...' />
-            <button className='search-button' onClick={(e) => handleClick(e)}>
-              Search
-            </button>
-          </form>
+          <SearchBar 
+            value={userToFind} 
+            onChange={handleInputChange} 
+            onClick={handleClick}
+            errorMessage={errorMessage}
+            toggleErrorMessage={toggleErrorMessage} 
+          />
           <article className='card'>
             <header className='card-header'>
               <div className='avatar'>

@@ -1,0 +1,15 @@
+.error-message {
+    padding: 0 7px;
+    position: absolute;
+    top: 50%;
+    right: 95px;
+    transform: translateY(-50%);
+    background-color: var(--content-bg);
+}
+
+@media screen and (min-width: 768px) {
+    .error-message {
+        padding: 0 10px;
+        right: 116px;
+    }
+}

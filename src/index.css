@@ -33,6 +33,7 @@ img {
     --accent: #0079FF;
     --accent-hover: #60ABFF;
     --error: #F74646;
+    --search-button: #FFF;
 }
 
 [data-theme='dark'] {
@@ -125,6 +126,7 @@ html {
 
 .paragraph-1::placeholder {
     /* ----Search input placeholder */
+    color: inherit;
     font-size: inherit;
 }
 
@@ -173,7 +175,7 @@ html {
 }
 
 .paragraph-5 {
-    /* User links */
+    /* ----User links */
     color: var(--text-medium);
     font-size: 0.8125rem;
     font-weight: 400;
@@ -183,6 +185,20 @@ html {
 @media screen and (min-width: 768px) {
     .paragraph-5 {
         font-size: 0.9375rem;
+    }
+}
+
+.paragraph-6 {
+    /* ----Error message */
+    color: var(--error);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media screen and (min-width: 768px) {
+    .paragraph-6 {
+        font-size: 1.125rem;
     }
 }
 
@@ -261,4 +277,20 @@ html {
     letter-spacing: 0.15625rem;
     text-transform: uppercase;
     transition: all .5s;
+}
+
+.button-2 {
+    color: var(--search-button);
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: normal;
+    transition: all .5s;
+}
+
+@media screen and (min-width: 768px) {
+    .button-2 {
+        font-size: 1rem;
+        font-weight: 700;
+    }
 }
