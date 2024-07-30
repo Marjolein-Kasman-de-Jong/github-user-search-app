@@ -8,7 +8,8 @@
     box-sizing: border-box;
 }
 
-button {
+button,
+input {
     font-family: inherit;
 }
 
@@ -50,6 +51,7 @@ button {
 
 html {
     font-family: 'Space Mono', sans-serif;
+    font-size: 16px;
     font-style: normal;
 }
 
@@ -97,17 +99,145 @@ html {
 
 /* --Paragraphs */
 
+[class^="paragraph"] {
+    transition: all .5s;
+}
+
 .paragraph-1 {
-    /* ----Input placeholder */
+    /* ----Search input */
     color: var(--text-medium);
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.5625rem;
-    transition: all .5s;
 }
 
 @media screen and (min-width: 600px) {
     .paragraph-1 {
         font-size: 1.125rem;
+    }
+}
+
+.paragraph-1::placeholder {
+    /* ----Search input placeholder */
+    font-size: inherit;
+}
+
+.paragraph-2 {
+    /* ----Date joined */
+    color: var(--text-light);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media screen and (min-width: 600px) {
+    .paragraph-2 {
+        font-size: 0.9375rem;
+    }
+}
+
+.paragraph-3 {
+    /* ----Bio */
+    color: var(--text-medium);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.5625rem;
+}
+
+@media screen and (min-width: 600px) {
+    .paragraph-3 {
+        font-size: 0.9375rem;
+    }
+}
+
+.paragraph-4 {
+    /* ----Stat numbers */
+    color: var(--text-dark);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 600px) {
+    .paragraph-4 {
+        font-size: 1.375rem;
+    }
+}
+
+.paragraph-5 {
+    /* User links */
+    color: var(--text-medium);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media screen and (min-width: 600px) {
+    .paragraph-5 {
+        font-size: 0.9375rem;
+    }
+}
+
+/* --Links */
+
+[class^="link"] {
+    transition: all .5s;
+}
+
+.link-1:link,
+.link-1:visited,
+.link-1:focus,
+.link-1:hover,
+.link-1:active {
+    /* ----GitHub handle */
+    color: var(--accent);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+    .link-1:link {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .link-1:focus,
+    .link-1:hover,
+    .link-1:active {
+        color: var(--accent-hover);
+    }
+}
+
+.link-2,
+.link-2:link,
+.link-2:visited,
+.link-2:focus,
+.link-2:active {
+    /* ----User links */
+    color: var(--text-medium);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+    .link-2,
+    .link-2:link,
+    .link-2:visited,
+    .link-2:focus,
+    .link-2:active {
+        font-size: 0.9375rem;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .link-2:hover {
+        text-decoration: underline;
     }
 }

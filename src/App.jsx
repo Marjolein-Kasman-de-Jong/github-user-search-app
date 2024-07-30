@@ -44,7 +44,7 @@ function App() {
       </header>
       <main>
         <form className='search-bar'>
-          <input className='paragraph-1' type='text' value={userToFind} onChange={handleInputChange} placeholder='Search GitHub username...'/>
+          <input className='paragraph-1' type='text' value={userToFind} onChange={handleInputChange} placeholder='Search GitHub username...' />
           <button className='search-button' onClick={(e) => handleClick(e)}>
             Search
           </button>
@@ -60,17 +60,17 @@ function App() {
                   {data?.username}
                 </h2>
                 <p className='handle'>
-                  <a href={data?.profile}>
+                  <a href={data?.profile} className='link-1'>
                     {`@${data?.handle}`}
                   </a>
                 </p>
               </hgroup>
-              <p className='joined'>
+              <p className='joined paragraph-2'>
                 {data?.joined}
               </p>
             </div>
           </header>
-          <p className='bio'>
+          <p className='bio paragraph-3'>
             {data?.bio}
           </p>
           <div className='stats-container'>
@@ -78,7 +78,7 @@ function App() {
               <h3 className='stat-title heading-3'>
                 Repos
               </h3>
-              <p className='stat-number'>
+              <p className='stat-number paragraph-4'>
                 {data?.repos}
               </p>
             </div>
@@ -86,7 +86,7 @@ function App() {
               <h3 className='stat-title heading-3'>
                 Followers
               </h3>
-              <p className='stat-number'>
+              <p className='stat-number paragraph-4'>
                 {data?.followers}
               </p>
             </div>
@@ -94,62 +94,62 @@ function App() {
               <h3 className='stat-title heading-3'>
                 Following
               </h3>
-              <p className='stat-number'>
+              <p className='stat-number paragraph-4'>
                 {data?.following}
               </p>
             </div>
           </div>
           <footer className='card-footer'>
             <div className='url'>
-              <div className='icon'>
+              <div className='icon paragraph-5'>
                 ic
               </div>
               <div>
-                {data?.location ? data.location : 'Not available'}
+                {data?.location ? <p className='paragraph-5'>{data.location}</p> : <p className='paragraph-5'>Not available</p>}
               </div>
             </div>
             <div className='url'>
-              <div className='icon'>
+              <div className='icon paragraph-5'>
                 ic
               </div>
               <div>
                 {
                   data?.blog ?
-                    <a href={data.blog}>
+                    <a href={data.blog} className='link-2'>
                       {data.blog}
                     </a>
                     :
-                    'Not available'
+                    <p className='paragraph-5'>Not available</p>
                 }
               </div>
             </div>
             <div className='url'>
-              <div className='icon'>
+              <div className='icon paragraph-5'>
                 ic
               </div>
               <div>
               {
                   data?.twitter ?
-                    <a href={data.twitter}>
+                    <a href={data.twitter} className='link-2'>
                       {data.twitter}
                     </a>
                     :
-                    'Not available'
+                    <p className='paragraph-5'>Not available</p>
                 }
               </div>
             </div>
             <div className='url'>
-              <div className='icon'>
+              <div className='icon paragraph-5'>
                 ic
               </div>
               <div>
               {
                   data?.company ?
-                    <a href={data.company}>
+                    <a href={data.company} className='link-2'>
                       {data.company}
                     </a>
                     :
-                    'Not available'
+                    <p className='paragraph-5'>Not available</p>
                 }
               </div>
             </div>
