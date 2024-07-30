@@ -2,6 +2,7 @@ import { useState } from 'react';
 import useLocalStorage from 'use-local-storage';
 
 // Components
+import PageTitle from './components/page-title/PageTitle';
 import ThemeButton from './components/theme-button/ThemeButton';
 
 // Helpers
@@ -39,9 +40,7 @@ function App() {
     <div className='page-wrapper' data-theme={theme}>
       <div className='content-wrapper'>
         <header className='page-header'>
-          <h1 className='page-title heading-1'>
-            devfinder
-          </h1>
+          <PageTitle />
           <ThemeButton theme={theme} onClick={switchTheme} />
         </header>
         <main>
