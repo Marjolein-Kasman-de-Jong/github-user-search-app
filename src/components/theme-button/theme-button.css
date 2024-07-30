@@ -1,0 +1,11 @@
+.theme-button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: none;
+    background-color: transparent;
+}
+
+.theme-button:hover {
+    cursor: pointer;
+}

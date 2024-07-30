@@ -13,6 +13,12 @@ input {
     font-family: inherit;
 }
 
+
+img {
+    width: 100px;
+    /*Nog verwijderen*/
+}
+
 /* Colors */
 
 :root {
@@ -76,7 +82,7 @@ html {
     font-weight: 700;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .heading-2 {
         font-size: 1.625rem;
     }
@@ -90,7 +96,7 @@ html {
     font-weight: 400;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .heading-3 {
         text-align: left;
         font-size: 0.8125rem;
@@ -111,7 +117,7 @@ html {
     line-height: 1.5625rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .paragraph-1 {
         font-size: 1.125rem;
     }
@@ -130,7 +136,7 @@ html {
     line-height: normal;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .paragraph-2 {
         font-size: 0.9375rem;
     }
@@ -144,7 +150,7 @@ html {
     line-height: 1.5625rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .paragraph-3 {
         font-size: 0.9375rem;
     }
@@ -160,7 +166,7 @@ html {
     text-transform: uppercase;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .paragraph-4 {
         font-size: 1.375rem;
     }
@@ -174,7 +180,7 @@ html {
     line-height: normal;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .paragraph-5 {
         font-size: 0.9375rem;
     }
@@ -199,13 +205,14 @@ html {
     text-decoration: none;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
     .link-1:link {
         font-size: 1rem;
     }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1440px) {
+
     .link-1:focus,
     .link-1:hover,
     .link-1:active {
@@ -226,7 +233,8 @@ html {
     text-decoration: none;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
+
     .link-2,
     .link-2:link,
     .link-2:visited,
@@ -236,8 +244,21 @@ html {
     }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1440px) {
     .link-2:hover {
         text-decoration: underline;
     }
+}
+
+/* Buttons */
+
+.button-1 {
+    color: var(--text-medium);
+    text-align: right;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15625rem;
+    text-transform: uppercase;
+    transition: all .5s;
 }

@@ -1,0 +1,38 @@
+/* Page wrapper */
+
+.page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Content wrapper */
+
+.content-wrapper {
+    border: 1px solid black;
+    width: 87.2%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+    .content-wrapper {
+        width: 74.6%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .content-wrapper {
+        width: 50.7%;
+    }
+}
+
+/* Page header */
+
+.page-header {
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
