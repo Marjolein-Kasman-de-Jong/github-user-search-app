@@ -6,7 +6,7 @@ import SearchButton from '../search-button/SearchButton';
 // Styles
 import './search-bar.css';
 
-export default function SearchBar({ value, onChange, onClick, errorMessage, toggleErrorMessage }) {
+export default function SearchBar({ value, onChange, handleSearchButtonClick, onInputClick, errorMessage }) {
     return (
         <form className='search-bar'>
             <svg 
@@ -23,12 +23,12 @@ export default function SearchBar({ value, onChange, onClick, errorMessage, togg
             <SearchInput 
                 value={value} 
                 onChange={onChange}
-                toggleErrorMessage={toggleErrorMessage}
+                onInputClick={onInputClick}
             />
             {
                 errorMessage && <ErrorMessage />
             }
-            <SearchButton onClick={onClick}/>
+            <SearchButton handleSearchButtonClick={handleSearchButtonClick} />
         </form>
     )
 }

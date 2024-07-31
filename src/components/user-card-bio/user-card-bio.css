@@ -1,0 +1,18 @@
+.bio {
+    margin-top: 33px;
+    trabsition: all .5s;
+}
+
+@media screen and (min-width: 768px) {
+    .bio {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .bio {
+        width: 75.7%;
+        margin-top: -36px;
+        margin-left: calc(18.2% + 37px);
+    }
+}

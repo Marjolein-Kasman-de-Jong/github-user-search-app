@@ -1,11 +1,7 @@
 // Styles
 import './search-input.css';
 
-export default function SearchInput({ value, onChange, toggleErrorMessage }) {
-    const handleClick = () => {
-        toggleErrorMessage(false);
-    }
-
+export default function SearchInput({ value, onChange, onInputClick }) {
     return (
         <input
             className='search-input paragraph-1'
@@ -14,7 +10,7 @@ export default function SearchInput({ value, onChange, toggleErrorMessage }) {
             type='text'
             value={value}
             onChange={onChange}
-            onClick={() => handleClick()}
+            onClick={onInputClick}
             placeholder='Search GitHub username...'
         />
     )

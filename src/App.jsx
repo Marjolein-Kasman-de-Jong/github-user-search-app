@@ -5,6 +5,7 @@ import useLocalStorage from 'use-local-storage';
 import PageTitle from './components/page-title/PageTitle';
 import ThemeButton from './components/theme-button/ThemeButton';
 import SearchBar from './components/search-bar/SearchBar';
+import UserCard from './components/user-card/UserCard';
 
 // Helpers
 import getData from './helpers/getData';
@@ -27,7 +28,7 @@ function App() {
     setUserToFind(e.target.value);
   }
 
-  const handleClick = async (e) => {
+  const handleSearchButtonClick = async (e) => {
     e.preventDefault();
 
     try {
@@ -38,6 +39,10 @@ function App() {
     } catch (error) {
       console.error('Failed to fetch data:', error);
     }
+  }
+
+  const handleClickOnInput = () => {
+    toggleErrorMessage(false);
   }
 
   return (
@@ -54,116 +59,11 @@ function App() {
           <SearchBar 
             value={userToFind} 
             onChange={handleInputChange} 
-            onClick={handleClick}
+            handleSearchButtonClick={handleSearchButtonClick}
+            onInputClick={handleClickOnInput}
             errorMessage={errorMessage}
-            toggleErrorMessage={toggleErrorMessage} 
           />
-          <article className='card'>
-            <header className='card-header'>
-              <div className='avatar'>
-                <img src={data?.avatar} alt={data?.username} />
-              </div>
-              <div>
-                <hgroup>
-                  <h2 className='username heading-2'>
-                    {data?.username}
-                  </h2>
-                  <p className='handle'>
-                    <a href={data?.profile} className='link-1'>
-                      {`@${data?.handle}`}
-                    </a>
-                  </p>
-                </hgroup>
-                <p className='joined paragraph-2'>
-                  {data?.joined}
-                </p>
-              </div>
-            </header>
-            <p className='bio paragraph-3'>
-              {data?.bio}
-            </p>
-            <div className='stats-container'>
-              <div className='stat'>
-                <h3 className='stat-title heading-3'>
-                  Repos
-                </h3>
-                <p className='stat-number paragraph-4'>
-                  {data?.repos}
-                </p>
-              </div>
-              <div className='stat'>
-                <h3 className='stat-title heading-3'>
-                  Followers
-                </h3>
-                <p className='stat-number paragraph-4'>
-                  {data?.followers}
-                </p>
-              </div>
-              <div className='stat'>
-                <h3 className='stat-title heading-3'>
-                  Following
-                </h3>
-                <p className='stat-number paragraph-4'>
-                  {data?.following}
-                </p>
-              </div>
-            </div>
-            <footer className='card-footer'>
-              <div className='url'>
-                <div className='icon paragraph-5'>
-                  ic
-                </div>
-                <div>
-                  {data?.location ? <p className='paragraph-5'>{data.location}</p> : <p className='paragraph-5'>Not available</p>}
-                </div>
-              </div>
-              <div className='url'>
-                <div className='icon paragraph-5'>
-                  ic
-                </div>
-                <div>
-                  {
-                    data?.blog ?
-                      <a href={data.blog} className='link-2'>
-                        {data.blog}
-                      </a>
-                      :
-                      <p className='paragraph-5'>Not available</p>
-                  }
-                </div>
-              </div>
-              <div className='url'>
-                <div className='icon paragraph-5'>
-                  ic
-                </div>
-                <div>
-                  {
-                    data?.twitter ?
-                      <a href={data.twitter} className='link-2'>
-                        {data.twitter}
-                      </a>
-                      :
-                      <p className='paragraph-5'>Not available</p>
-                  }
-                </div>
-              </div>
-              <div className='url'>
-                <div className='icon paragraph-5'>
-                  ic
-                </div>
-                <div>
-                  {
-                    data?.company ?
-                      <a href={data.company} className='link-2'>
-                        {data.company}
-                      </a>
-                      :
-                      <p className='paragraph-5'>Not available</p>
-                  }
-                </div>
-              </div>
-            </footer>
-          </article>
+          <UserCard data={data}/>
         </main>
       </div>
     </div>

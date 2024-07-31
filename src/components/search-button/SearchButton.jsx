@@ -1,11 +1,11 @@
 // Styles
 import './search-button.css';
 
-export default function SearchButton({ onClick }) {
+export default function SearchButton({ handleSearchButtonClick }) {
     return (
         <button
             className='search-button button-2'
-            onClick={(e) => onClick(e)}
+            onClick={handleSearchButtonClick}
         >
             Search
         </button>
