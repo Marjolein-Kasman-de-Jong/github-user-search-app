@@ -6,7 +6,7 @@ export default function UserCardFooterItem({ data, item }) {
         <div className='user-card-footer-item'>
             <div className={`icon paragraph-5 ${!data[item] && 'not-available'}`}>
                 <img
-                    src={`/images/icon-${item}.svg`}
+                    src={`images/icon-${item}.svg`}
                     alt={item}
                 />
             </div>
