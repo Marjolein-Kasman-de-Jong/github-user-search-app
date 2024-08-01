@@ -6,13 +6,12 @@ export default function UserCardFooterItem({ data, item }) {
         <div className='user-card-footer-item'>
             <div className={`icon paragraph-5 ${!data[item] && 'not-available'}`}>
                 <img
-                    src={`./public/images/icon-${item}.svg`}
+                    src={`/images/icon-${item}.svg`}
                     alt={item}
                 />
             </div>
             <div>
                 {
-                    // Moet ik nog checken voor data als ik de card conditioneel render?
                     data && data[item] ?
                         item === 'location' || item === 'company' ?
                             <p className={`paragraph-5 ${!data[item] && 'not-available'}`}>
