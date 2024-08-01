@@ -23,4 +23,4 @@ Users should be able to:
 
 <hr>
 
-![GitHub user search app](https://github.com/Marjolein-Kasman-de-Jong/github-user-search-app/blob/main/Screenshot.png)
+![GitHub user search app](https://github.com/Marjolein-Kasman-de-Jong/github-user-search-app/blob/main/public/images/Screenshot.png)
