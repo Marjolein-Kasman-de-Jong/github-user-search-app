@@ -16,7 +16,7 @@ import './App.css';
 function App() {
   const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light');
   const [userToFind, setUserToFind] = useState('');
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
   const [errorMessage, toggleErrorMessage] = useState(false);
 
   const switchTheme = () => {
@@ -25,6 +25,8 @@ function App() {
   }
 
   const handleInputChange = (e) => {
+    toggleErrorMessage(false);
+    setData(null);
     setUserToFind(e.target.value);
   }
 
@@ -39,10 +41,6 @@ function App() {
     } catch (error) {
       console.error('Failed to fetch data:', error);
     }
-  }
-
-  const handleClickOnInput = () => {
-    toggleErrorMessage(false);
   }
 
   return (
@@ -60,10 +58,9 @@ function App() {
             value={userToFind} 
             onChange={handleInputChange} 
             handleSearchButtonClick={handleSearchButtonClick}
-            onInputClick={handleClickOnInput}
             errorMessage={errorMessage}
           />
-          <UserCard data={data}/>
+          <UserCard data={data} />
         </main>
       </div>
     </div>

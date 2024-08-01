@@ -8,12 +8,16 @@ import UserCardFooter from '../user-card-footer/UserCardFooter';
 import './user-card.css';
 
 export default function UserCard({ data }) {
-    return (
-        <article className='card'>
-            <UserCardHeader data={data} />
-            <UserCardBio data={data} />
-            <UserCardStats data={data} />
-            <UserCardFooter data={data} />
-        </article>
-    )
+    if (data) {
+        return (
+            <article className='card'>
+                <UserCardHeader data={data} />
+                <UserCardBio data={data} />
+                <UserCardStats data={data} />
+                <UserCardFooter data={data} />
+            </article>
+        )
+    } else {
+        return null;
+    }
 }

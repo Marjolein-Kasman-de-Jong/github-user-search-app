@@ -41,13 +41,6 @@ input {
     --text-dark: #FFF;
 }
 
-/* Background */
-
-.page-wrapper {
-    background-color: var(--page-bg);
-    transition: all .5s;
-}
-
 /* Typography */
 
 html {

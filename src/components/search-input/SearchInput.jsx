@@ -1,7 +1,7 @@
 // Styles
 import './search-input.css';
 
-export default function SearchInput({ value, onChange, onInputClick }) {
+export default function SearchInput({ value, onChange }) {
     return (
         <input
             className='search-input paragraph-1'
@@ -10,7 +10,6 @@ export default function SearchInput({ value, onChange, onInputClick }) {
             type='text'
             value={value}
             onChange={onChange}
-            onClick={onInputClick}
             placeholder='Search GitHub username...'
         />
     )

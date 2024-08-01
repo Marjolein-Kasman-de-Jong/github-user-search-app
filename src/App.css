@@ -2,17 +2,20 @@
 
 .page-wrapper {
     width: 100%;
-    min-height: 100vh;
+    min-height: 125vh;
+    background-color: var(--page-bg);
 }
 
 /* Content wrapper */
 
 .content-wrapper {
     width: 87.2%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%); 
 }
 
 @media screen and (min-width: 768px) {

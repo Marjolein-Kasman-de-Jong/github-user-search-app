@@ -3,7 +3,7 @@
     border-radius: 15px;
     background-color: var(--content-bg);
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
-    transition: all .5s;
+    animation: changeOpacity 1s linear;
 }
 
 @media screen and (min-width: 768px) {
@@ -15,5 +15,15 @@
 @media screen and (min-width: 1440px) {
     .card {
         padding: 48px;
+    }
+}
+
+@keyframes changeOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
