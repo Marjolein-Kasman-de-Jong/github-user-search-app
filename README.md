@@ -1,4 +1,4 @@
-# Product List With Cart (w/ theme switcher)
+# GitHub User Search App (w/ theme switcher)
 
 [Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6)
 
