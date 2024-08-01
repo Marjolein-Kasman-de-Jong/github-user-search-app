@@ -183,6 +183,10 @@ html {
     }
 }
 
+.paragraph-5.not-available {
+    opacity: .5;
+}
+
 .paragraph-6 {
     /* ----Error message */
     color: var(--error);
@@ -242,6 +246,8 @@ html {
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
+    position: relative;
+    display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
@@ -256,8 +262,19 @@ html {
 }
 
 @media screen and (min-width: 1440px) {
-    .link-2:hover {
-        text-decoration: underline;
+    .link-2::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0px;
+        border: 1px solid transparent;
+        transition: all .5s;
+    }
+
+    .link-2:hover::after {
+        width: 100%;
+        border: 1px solid var(--text-medium);
     }
 }
 

@@ -1,10 +1,14 @@
 .card-footer {
     margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 17px;
 }
 
 @media screen and (min-width: 768px) {
     .card-footer {
         margin-top: 30px;
+        row-gap: 21px;
     }
 }
 
