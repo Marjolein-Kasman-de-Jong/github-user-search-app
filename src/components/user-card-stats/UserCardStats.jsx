@@ -1,34 +1,19 @@
+// Components
+import UserCardStat from '../user-card-stat/UserCardStat';
+
 // Styles
 import './user-card-stats.css';
 
 export default function UserCardStats({ data }) {
-    console.log(data)
+    const stats = ['repos', 'followers', 'following'];
+
     return (
         <section className='stats-container'>
-            <div className='stat'>
-                <h3 className='stat-title heading-3'>
-                    Repos
-                </h3>
-                <p className='stat-number paragraph-4'>
-                    {data?.repos}
-                </p>
-            </div>
-            <div className='stat'>
-                <h3 className='stat-title heading-3'>
-                    Followers
-                </h3>
-                <p className='stat-number paragraph-4'>
-                    {data?.followers}
-                </p>
-            </div>
-            <div className='stat'>
-                <h3 className='stat-title heading-3'>
-                    Following
-                </h3>
-                <p className='stat-number paragraph-4'>
-                    {data?.following}
-                </p>
-            </div>
+            {
+                stats.map((stat) => {
+                    return <UserCardStat key={stat} data={data} stat={stat} />
+                })
+            }
         </section>
     )
 }

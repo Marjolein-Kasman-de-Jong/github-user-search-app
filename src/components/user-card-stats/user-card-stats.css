@@ -1,8 +1,7 @@
 .stats-container {
     margin-top: 23px;
-    padding: 18px 0;
+    padding: 18px 15px;
     display: flex;
-    justify-content: space-around;
     border-radius: 10px;
     background-color: var(--page-bg);
     transition: all .5s;
@@ -11,6 +10,6 @@
 @media screen and (min-width: 768px) {
     .stats-container {
         margin-top: 32px;
-        padding: 16px 0;
+        padding: 16px 32px;
     }
 }
